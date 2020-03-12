@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> How to Setup OpenVPN on the iPhone · WeShare</title><meta name="description" content="How to Setup OpenVPN on the iPhone - imuxin"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/weshare/weshare.png"><link rel="stylesheet" href="/weshare/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://www.slicloud.com:38876/atom.xml" title="WeShare"></head><body><div class="wrap"><header><a href="/weshare/" class="logo-link"><img src="/weshare/weshare.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/weshare/" target="_self" class="nav-list-link">ARTICLES</a></li><li class="nav-list-item"><a href="/weshare/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/iweshare/weshare" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/weshare/2019/09/15/About/" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">How to Setup OpenVPN on the iPhone</h1><div class="post-info">zxy @Sep 30, 2019</div><div class="post-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Background"><span class="toc-text">Background</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prerequisites"><span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Step-by-Step-Tutorial"><span class="toc-text">Step by Step Tutorial</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenVPN-Connect-Setup"><span class="toc-text">OpenVPN Connect Setup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SOCKS-proxy-Setup"><span class="toc-text">SOCKS proxy Setup</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol></div><div class="post-content"><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>This lesson demonstrates how to configure the iOS OpenVPN client to authenticate with certificates and configure the SOCKS proxy.</p>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>Device with iOS 9.0 and up</li>
+<li>Internet connectivity and Apple ID to access App Store and download OpenVPN application.</li>
+<li>Hosted a .pac file on a Web Server</li>
+</ul>
+<blockquote>
+<p>On iOS is possible to create TUN tunnels only, as TAP tunnels are not supported by the operating system itself. For more information, please refer to <a href="https://docs.openvpn.net/connecting/connecting-to-access-server-with-apple-ios/faq-regarding-openvpn-connect-ios/#Why_doesnt_the_app_support_tap-style_tunnels" target="_blank" rel="noopener">OpenVPN iOS client FAQs</a>. The <a href="https://help.endian.com/hc/it/articles/218145318-Set-up-of-a-VPN-Server-Instance" target="_blank" rel="noopener">OpenVPN server instance</a> has to be configured to use TUN device.</p>
+</blockquote>
+<h2 id="Step-by-Step-Tutorial"><a href="#Step-by-Step-Tutorial" class="headerlink" title="Step by Step Tutorial"></a>Step by Step Tutorial</h2><h3 id="OpenVPN-Connect-Setup"><a href="#OpenVPN-Connect-Setup" class="headerlink" title="OpenVPN Connect Setup"></a>OpenVPN Connect Setup</h3><ol>
+<li><p>Open iTunes on your computer, connect your iPhone or iPad, click on “File Sharing” and select “OpenVPN”. Then click on “Add…”.<br><img src="openvpn-0.png" alt="upload successful"><br></p>
+</li>
+<li><p>Download the <a href="https://member.hide.me/en/server-status" target="_blank" rel="noopener">OpenVPN configuration file</a>, unzip it and select the .ovpn file. Then click on “Add”.<br><img src="openvpn-1.png" alt="upload successful"><br></p>
+</li>
+<li><p>Install the profile in OpenVPN Connect, for that click on the green plus button.<br><img src="openvpn-2.png" alt="upload successful"><br></p>
+</li>
+<li><p>Enter your login credentials and click on the “Add” button. Optionally you can save your password.<br><img src="openvpn-3.png" alt="upload successful"><br>A dialog window will open asking you to allow the OpenVPN iOS application to add a VPN configuration to the system. This is a default warning message advising you that your network connection will be redirected over the VPN and you can safely tap “Allow”.<br><img src="openvpn-4.png" alt="upload successful"><br></p>
+</li>
+<li><p>When activating the connection, a dialog window will ask you to confirm that you want to enable the connection to VPN. Confirm with “Yes”.<br><img src="openvpn-5.png" alt="upload successful"><br></p>
+</li>
+<li><p>If connection has been successfully established, the status is shown in the menu bar. You can manage your VPN connection with the OpenVPN app.<br><img src="openvpn-6.png" alt="upload successful"><br></p>
+</li>
+<li><p>Afterwards you can easily access that profile by clicking on “OVPN Profile” in “OpenVPN Connect” app.<br><img src="openvpn-7.png" alt="upload successful"><br></p>
+</li>
+</ol>
+<h3 id="SOCKS-proxy-Setup"><a href="#SOCKS-proxy-Setup" class="headerlink" title="SOCKS proxy Setup"></a>SOCKS proxy Setup</h3><ol>
+<li><p>Open up <strong>settings &gt; wifi</strong>.</p>
+</li>
+<li><p>Click on the <strong>blue arrow</strong> next to your wifi connection.</p>
+</li>
+<li><p>Scroll to the bottom where there is a section for <strong>HTTP Proxy</strong>.</p>
+</li>
+<li><p>Select <strong>Auto</strong> from this section.</p>
+</li>
+<li><p>In the URL field, key in the URL of the *.pac file you created and made web-accessible.</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><p><a href="https://en.wikipedia.org/wiki/OpenVPN" target="_blank" rel="noopener">OpenVPN</a></p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/SOCKS" target="_blank" rel="noopener">SOCKS</a></p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Proxy_auto-config" target="_blank" rel="noopener">Proxy_auto-config</a></p>
+</li>
+<li><p><a href="http://www.capjsj.cn/ios_openvpn.html" target="_blank" rel="noopener">如何下载OpenVPN</a></p>
+</li>
+<li><p><a href="https://www.amsys.co.uk/how-to-use-a-pac-file-in-ios/" target="_blank" rel="noopener">How To Use a .pac File in iOS</a></p>
+</li>
+<li><p><a href="https://hide.me/en/vpnsetup/ios/openvpn/" target="_blank" rel="noopener">How to Setup OpenVPN on iPad / iPhone</a></p>
+</li>
+<li><p><a href="https://help.endian.com/hc/it/articles/360008350974-How-to-configure-iOS-OpenVPN-client-with-certificate-authentication" target="_blank" rel="noopener">How To Configure IOS OpenVPN Client With Certificate Authentication</a></p>
+</li>
+<li><p><a href="https://gist.github.com/austinhappel/5614113" target="_blank" rel="noopener">How to connect an iOS device to your computer via a SOCKS proxy</a></p>
+</li>
+</ol>
+</div></article></div></main><footer><div class="paginator"><a href="/weshare/2020/02/20/二分法及其应用/" class="prev">PREV</a><a href="/weshare/2019/09/29/contribute/" class="next">NEXT</a></div><div class="copyright"><p>© 2019 - 2020 <a href="http://www.slicloud.com:38876">imuxin</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="/weshare/js/post.js"></script></body></html>
+</div></article></div></main><footer><div class="paginator"><a href="/weshare/2019/09/29/contribute/" class="next">NEXT</a></div><div class="copyright"><p>© 2019 - 2020 <a href="http://www.slicloud.com:38876">imuxin</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="/weshare/js/post.js"></script></body></html>
