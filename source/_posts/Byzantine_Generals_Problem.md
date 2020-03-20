@@ -141,7 +141,11 @@ Raft采用心跳机制触发Leader选举。当系统启动时，所有节点初�
 在对等式数位货币系统比特币里，比特币网路的运作是平行的（parallel）。各节点与终端都运算著区块链来达成工作量证明（PoW）。
 
 ## Reference
+
 [《In Search of an Understandable Consensus Algorithm (Extended Version)》](https://ramcloud.atlassian.net/wiki/download/attachments/6586375/raft.pdf)
+
 [拜占庭将军问题-维基百科](https://zh.wikipedia.org/zh-hans/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B0%86%E5%86%9B%E9%97%AE%E9%A2%98)
+
 [什么是拜占庭将军问题](https://learnblockchain.cn/2018/02/05/bitcoin-byzantine/)
+
 [如何理解拜占庭将军问题](https://www.zhihu.com/question/23167269)
